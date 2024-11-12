@@ -1,0 +1,32 @@
+.log{
+    width: 25%;
+    height: 50%;
+    margin: auto;
+    margin-top: 10%;
+    border: 2px solid black;
+    padding: 40px 40px 40px 40px
+    
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+h1{
+    text-align: center;
+}
+
+.us{
+    border-radius: 5px;
+    width: 15vw;
+    height: 5vh;
+}
+.btn1{
+    color: ivory;
+    background-color: chocolate;
+    border-radius: 5px;
+    padding: 3px;
+    width: 8vw;
+    height: 5vh;
+}
