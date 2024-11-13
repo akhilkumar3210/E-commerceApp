@@ -4,4 +4,5 @@ urlpatterns=[
     path('',views.ecom_login),
     path('shop_home',views.shop_home),
     path('logout',views.ecom_logout),
+    path('product',views.add_product),
 ]

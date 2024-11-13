@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-image: url(static/images/pexels-bohlemedia-1884581.jpg);">
+    <div class="pro">
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="p_id" id="" placeholder="Product ID" class="pd"><br><br>
+            <input type="text" name="name" id="" placeholder="Product Name" class="pd"><br><br>
+            <input type="text" name="description" id="" placeholder="Product Description" class="pd"><br><br>
+            <input type="number" name="p_price" id="" placeholder="Product Price" class="pd"><br><br>
+            <input type="number" name="of_price" id="" placeholder="Product Offer_Price" class="pd"><br><br>
+            <input type="number" name="p_stock" id="" placeholder="Product Stock" class="pd"><br><br>
+            <input type="file" name="p_img" id="" class="pd"><br><br>
+            <input type="submit" value="Add" class="pb">
+        </form>
+    </div>
+</body>
+
+</html>
