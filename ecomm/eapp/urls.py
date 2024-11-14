@@ -5,4 +5,5 @@ urlpatterns=[
     path('shop_home',views.shop_home),
     path('logout',views.ecom_logout),
     path('product',views.add_product),
+    path('edit/<id>',views.edit_product),
 ]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body style="background-color: rgb(122, 0, 0);">
+    <div class="pro">
+        <h2>Edit Product</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="p_id" id="" placeholder="Product ID" class="pd" required
+                value="{{data.pid}}"><br><br>
+            <input type="text" name="name" id="" placeholder="Product Name" class="pd" required
+                value="{{data.name}}"><br><br>
+            <input type="text" name="description" id="" placeholder="Product Description" class="pd" required
+                value="{{data.descri}}"><br><br>
+            <input type="number" name="p_price" id="" placeholder="Product Price" class="pd" required
+                value="{{data.price}}"><br><br>
+            <input type="number" name="of_price" id="" placeholder="Product Offer_Price" class="pd" required
+                value="{{data.off_price}}"><br><br>
+            <input type="number" name="p_stock" id="" placeholder="Product Stock" class="pd" required
+                value="{{data.stock}}"><br><br>
+            <img src="{{data.img.url}}" alt="" style="width: 400px;height:400px;">
+            <input type="file" name="p_img" id="" class="pd"><br><br>
+            <input type="submit" value="Update" class="pb">
+        </form>
+    </div>
+</body>
+
+</html>
