@@ -111,3 +111,51 @@ def user_logout(req):
     logout(req)
     req.session.flush()
     return redirect(ecom_login)
+
+def view_product(req,pid):
+    data=Product.objects.get(pk=pid)
+    return render(req,'user/view_product.html',{'data':data})
+
+def add_to_cart(req,pid):
+    product=Product.objects.get(pk=pid)
+    user=User.objects.get(username=req.session['user'])
+    try:
+        cart=Cart.objects.get(product=product,user=user)
+        cart.qty+=1
+        cart.save()
+    except:
+        data=Cart.objects.create(product=product,user=user,qty=1)
+        data.save()
+    return redirect(view_cart)
+
+def view_cart(req):
+    user=User.objects.get(username=req.session['user'])
+    data=Cart.objects.filter(user=user)
+    return render(req,'user/cart.html',{'cart':data})
+
+def qty_add(req,cid):
+    data=Cart.objects.get(pk=cid)
+    if data.product.stock > data.qty:
+        data.qty+=1
+        data.save()
+    return redirect(view_cart)
+
+
+def qty_sub(req,cid):
+    data=Cart.objects.get(pk=cid)
+    data.qty-=1
+    data.save()
+    if data.qty==0:
+        data.delete()
+    return redirect(view_cart)
+
+def buy_product(req,pid):
+    product=Product.objects.get(pk=pid)
+    user=User.objects.get(username=req.session['user'])
+    qty=1
+    price=product.off_price
+    buy=Buy.objects.create(product=product,user=user,qty=qty,tot_price=price)
+    return redirect(user_bookings)
+
+def user_bookings(req):
+    return render(req,'user/bookings.html')

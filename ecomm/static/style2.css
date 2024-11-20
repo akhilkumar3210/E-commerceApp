@@ -1,0 +1,16 @@
+.container{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.ad{
+    text-decoration: none;
+    color: black;
+    width: 5px;
+}
+
+.sb{
+    text-decoration: none;
+    color: black;
+    width: 5px;
+}

@@ -1,29 +1,29 @@
-.log{
+.log {
     width: 25%;
     height: 50%;
     margin: auto;
     margin-top: 10%;
     border: 2px solid rgb(248, 248, 248);
     padding: 40px 40px 40px 40px
-    
 }
 
-body{
+body {
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size: 100%;
 }
 
-h1{
+h1 {
     text-align: center;
     color: rgb(236, 236, 236);
 }
-.us{
+
+.us {
     width: 20vw;
     height: 5vh;
 }
 
 
-.btn1{
+.btn1 {
     color: rgb(0, 0, 0);
     background-color: rgb(124, 121, 121);
     border-radius: 5px;
@@ -33,24 +33,24 @@ h1{
     margin-left: 2vw;
 }
 
-.pro{
+.pro {
     width: 30%;
     margin: auto;
     margin-top: 20vh;
     text-align: center;
 }
 
-.pd{
+.pd {
     width: 30vw;
     height: 5vh;
 }
 
-.pb{
+.pb {
     width: 5vw;
     height: 4vh;
 }
 
-.reg{
+.reg {
     width: 25%;
     height: 50%;
     margin: auto;
@@ -58,6 +58,18 @@ h1{
     border: 2px solid rgb(0, 0, 0);
     padding: 40px 40px 40px 40px
 }
-.btt{
-    margin-top: 2vh;
+
+.btt {
+    margin-left: 10vw;
 }
+
+.product1{
+    width: 80%;
+    margin: auto;
+}
+
+
+.p1{
+    margin-left: 20vw;
+}
+
