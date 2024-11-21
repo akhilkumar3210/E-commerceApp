@@ -85,6 +85,7 @@ def delete_product(req,pid):
     os.remove('media/'+file)
     data.delete()
     return redirect(shop_home)
+
 #----------------User----------------------------------------------------------------------
 
 def register(req):
@@ -155,7 +156,27 @@ def buy_product(req,pid):
     qty=1
     price=product.off_price
     buy=Buy.objects.create(product=product,user=user,qty=qty,tot_price=price)
+    buy.save()
+    return redirect(user_bookings)
+
+def cart_buy(req,cid):
+    cart=Cart.objects.get(pk=cid)
+    price=cart.qty*cart.product.off_price
+    stock=cart.product.stock-cart.qty
+    
+    if stock==0:
+        messages.warning(req,'Out of Stock!!!'+cart.product.name)
+        return redirect(view_cart)
+    buy=Buy.objects.create(product=cart.product,user=cart.user,qty=cart.qty,tot_price=price)
+    buy.save()
     return redirect(user_bookings)
 
 def user_bookings(req):
-    return render(req,'user/bookings.html')
+    user=User.objects.get(username=req.session['user'])
+    bookings=Buy.objects.filter(user=user)[::-1]
+    return render(req,'user/bookings.html',{'bookings':bookings})
+
+
+def us_bookings(req):
+    bookings=Buy.objects.all()[::-1]
+    return render(req,'shop/ubookings.html',{'bookings':bookings})

@@ -8,6 +8,7 @@ urlpatterns=[
     path('product',views.add_product),
     path('edit/<id>',views.edit_product),
     path('delete/<pid>',views.delete_product),
+    path('usbookings',views.us_bookings),
     
 #----------------User----------------------------------------------------------------------
 
@@ -21,6 +22,7 @@ urlpatterns=[
     path('qty_add/<cid>',views.qty_add),
     path('buy/<pid>',views.buy_product),
     path('bookings',views.user_bookings),
+    path('cartbuy/<cid>',views.cart_buy),
     
     
         
